@@ -209,55 +209,6 @@ export const mainStore = defineStore("main", {
   actions: {},
 });
 
-```
-
-## 四、 集成Element Plus
-
-### 4.1. 安装
-
-```shell
-# 选择一个你喜欢的包管理器
-# NPM
-$ npm install element-plus --save
-# Yarn
-$ yarn add element-plus
-# pnpm
-$ pnpm install element-plus
-```
-
-### 4.2. 自动按需导入
-
-您需要使用额外的插件来导入要使用的组件。
-
-首先你需要安装`unplugin-vue-components` 和 `unplugin-auto-import`这两款插件
-
-```shell
-npm install -D unplugin-vue-components unplugin-auto-import
-```
-
-### 4.3. 修改Vite配置文件
-
-```typescript
-// vite.config.ts
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-
-export default {
-  plugins: [
-    // ...
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
-    }),
-  ],
-}
-```
-
-这样我们不需要全局注册Element Plus的组件，也不需要引入样式，直接可以使用，插件会自动帮我们完成相应的操作。
-
 ## 五、Axios集成
 
 ### 5.1. 安装
